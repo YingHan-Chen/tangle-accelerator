@@ -50,14 +50,14 @@ static status_t divide_historical_data(char* file_path) {
         out_count[0] = 0;
         cnt = 0;
         cnt_base1000++;
-        if (cnt_base1000 % 10 == 0) {
+        if (cnt_base1000 % 1000 == 0) {
           if (fp_w) {
             fclose(fp_w);
           }
           strncpy(out_file, file_name_buffer, strlen(file_name_buffer));
           out_file[strlen(file_name_buffer)] = 0;
           strcat(out_file, "_");
-          int tmp = cnt_base1000 / 10;
+          int tmp = cnt_base1000 / 1000;
           int idx = 0;
           int base = 100000;
           while (base) {
