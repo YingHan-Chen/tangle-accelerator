@@ -8,6 +8,14 @@ cc_library(
     ],
 )
 
+cc_binary(
+    name = "scylladb_divider",
+    srcs = ["scylladb_divider.c"],
+    deps = [
+        ":storage",
+    ],
+)
+
 cc_library(
     name = "scylladb_identity",
     srcs = ["scylladb_identity.c"],
