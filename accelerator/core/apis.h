@@ -169,7 +169,8 @@ status_t api_send_mam_message(const ta_config_t* const info, const iota_config_t
  * fields include address, value, tag, and message. This API would also try to
  * find the transactions after bundle sent.
  *
- * @param core[in] Pointer to Tangle-accelerator core configuration structure
+ * @param[in] core Pointer to Tangle-accelerator core configuration structure
+ * @param[in] iota_service IRI node end point service
  * @param[in] obj Input data in JSON
  * @param[out] json_result Result containing transaction objects in json format
  *
@@ -177,7 +178,8 @@ status_t api_send_mam_message(const ta_config_t* const info, const iota_config_t
  * - SC_OK on success
  * - non-zero on error
  */
-status_t api_send_transfer(const ta_core_t* const core, const char* const obj, char** json_result);
+status_t api_send_transfer(const ta_core_t* const core, const iota_client_service_t* iota_service,
+                           const char* const obj, char** json_result);
 
 /**
  * @brief Return transaction object with given single transaction hash.

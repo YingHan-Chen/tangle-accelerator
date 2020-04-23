@@ -70,7 +70,7 @@ static struct ta_cli_argument_s {
     {"version", no_argument, NULL, 'v', "tangle-accelerator version"},
     {"ta_host", required_argument, NULL, TA_HOST_CLI, "TA listening host"},
     {"ta_port", required_argument, NULL, TA_PORT_CLI, "TA listening port"},
-    {"ta_thread", optional_argument, NULL, TA_THREAD_COUNT_CLI, "TA executing thread"},
+    {"ta_thread", required_argument, NULL, TA_THREAD_COUNT_CLI, "TA executing thread"},
     {"iri_host", required_argument, NULL, IRI_HOST_CLI, "IRI listening host"},
     {"iri_port", required_argument, NULL, IRI_PORT_CLI, "IRI listening port"},
     {"mqtt_host", required_argument, NULL, MQTT_HOST_CLI, "MQTT listening host"},

@@ -210,6 +210,20 @@ status_t cli_core_set(ta_core_t* const core, int key, char* const value) {
   return SC_OK;
 }
 
+status_t ta_set_iota_client_service(iota_client_service_t* service, char const* host, uint16_t port) {
+  service->http.path = "/";
+  service->http.content_type = "application/json";
+  service->http.accept = "application/json";
+  service->http.host = host;
+  service->http.port = port;
+  service->http.api_version = 1;
+  service->http.ca_pem = NULL;
+  service->serializer_type = SR_JSON;
+  init_json_serializer(&service->serializer);
+
+  return SC_OK;
+}
+
 status_t ta_core_default_init(ta_core_t* const core) {
   status_t ret = SC_OK;
 

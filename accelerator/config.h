@@ -179,6 +179,19 @@ status_t ta_core_set(ta_core_t* const core);
  */
 void ta_core_destroy(ta_core_t* const core);
 
+/**
+ * Initializes iota_client_service
+ *
+ * @param service[in] IOTA client serivce
+ * @param host[in] host of connecting service
+ * @param port[in] port of connecting service
+ *
+ * @return
+ * - SC_OK on success
+ * - non-zero on error
+ */
+status_t ta_set_iota_client_service(iota_client_service_t* service, char const* host, uint16_t port);
+
 #ifdef __cplusplus
 }
 #endif
